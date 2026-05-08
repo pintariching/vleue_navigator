@@ -1,5 +1,4 @@
 use bevy::{color::palettes, prelude::*};
-use rand::Rng;
 use std::ops::Deref;
 use vleue_navigator::prelude::*;
 
@@ -45,8 +44,8 @@ pub fn give_target_to_navigator<const SIZE: u32, const X: u32, const Y: u32>(
         let mut x = 1.0;
         let mut y = 1.0;
         for _ in 0..10 {
-            x = rand::rng().random_range(0.0..(X as f32));
-            y = rand::rng().random_range(0.0..(Y as f32));
+            x = rand::random_range(0.0..(X as f32));
+            y = rand::random_range(0.0..(Y as f32));
 
             if navmesh.is_in_mesh(Vec2::new(x, y)) {
                 break;
